@@ -3,6 +3,13 @@
 public class Main {
   public static void main(String[] args) {
     // Same with other languages, Java follows the common comparison operators
+    //
+    // `==` is equal
+    // `<` is less than
+    // `>` is greater than
+    // `<=` is less than or equal
+    // `>=` is greater than or equal
+    // `!=` not equal 
     System.out.println(20 == 20); // true
     System.out.println(2 >= 20); // false
     System.out.println(2 <= 20); // true

@@ -16,8 +16,9 @@ public class Main {
   public static void main(String[] args) {
     {
       int num = 10;
-
-      System.out.println("num = " + num);
     }
+
+    // Move this inside the scope {} where num is defined
+    System.out.println("num = " + num);
   }
 }

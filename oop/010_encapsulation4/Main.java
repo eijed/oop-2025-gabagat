@@ -38,8 +38,9 @@ class Car {
         return this.color;
     }
 
-    // This is our setter for `color`
+    // Here is our setter for `color`.
+    // This should set color attribute based from the argument
     public void setColor(String color) {
-        this.color = color;
+
     }
 }

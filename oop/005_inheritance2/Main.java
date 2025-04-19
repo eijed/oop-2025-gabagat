@@ -20,12 +20,17 @@ class Animal {
 
 class Dog extends Animal {
     // declaring a function that already exists in the super would override it.
+    // IMPORTANT NOTE: Override not Overloading as discussed in functions.
+    //      To provide clarity to the code, it is beneficial for us to use @Override annotation. It also ensures
+    //      backward compatibility to old Java versions.
+    @Override
     public void eat() {
         System.out.println("Dog is eating...");
     }
 
     // in-case you'd like to still call the original function from our super class when declaring the same
     // function name, you could use `super` keyword to access the members from our super.
+    @Override
     public void speak() {
         super.???();
         System.out.println("Dog is barking...");

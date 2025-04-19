@@ -24,6 +24,7 @@ class Animal {
 }
 
 class Canine extends ??? {
+    @Override
     public void speak() {
         System.out.println("Canine is speaking...");
     }
@@ -31,10 +32,12 @@ class Canine extends ??? {
 
 class Dog extends ??? {
     // declaring a function that already exists in the super would override it.
+    @Override
     public void eat() {
         System.out.println("Dog is eating...");
     }
 
+    @Override
     public void speak() {
         System.out.println("Dog is barking...");
     }

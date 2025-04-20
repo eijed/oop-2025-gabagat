@@ -5,6 +5,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.PrintStream;
 
+import java.lang.reflect.Modifier;
+
 public class MainTest {
     @Test
     public void testMainOutput() {
@@ -18,5 +20,7 @@ public class MainTest {
         System.setOut(originalOut);
 
         assertEquals("Sending SMS to 911 with 'Help'\nCalling 911\n", outContent.toString());
+
+        assertTrue(Modifier.isAbstract(Phone.class.getModifiers()));
     }
 }

@@ -73,7 +73,7 @@ public class App extends Application {
     public void start(Stage stage) {
         Scene helloWorld = new Scene(createForm(), 300, 300);
         stage.setScene(helloWorld);
-        stage.setTitle("Introduction to JavaFX: Scene");
+        stage.setTitle("Introduction to JavaFX: TextField");
         stage.show();
     }
 }

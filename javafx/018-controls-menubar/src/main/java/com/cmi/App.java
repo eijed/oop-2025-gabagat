@@ -15,67 +15,66 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    public static void main(String[] args) {
-        launch();
-    }
+  public static void main(String[] args) {
+    launch();
+  }
 
-    private Parent initializeMenu() {
-        MenuBar menubar = new MenuBar();
-        
-        Menu fileMenu = new Menu("File");
-        MenuItem fileNew = new MenuItem("New");
-        MenuItem fileOpen = new MenuItem("Open");
-        MenuItem fileSave = new MenuItem("Save");
-        MenuItem fileExit = new MenuItem("Exit");
+  private Parent initializeMenu() {
+    MenuBar menubar = new MenuBar();
 
-        Menu aboutMenu = new Menu("About");
+    Menu fileMenu = new Menu("File");
+    MenuItem fileNew = new MenuItem("New");
+    MenuItem fileOpen = new MenuItem("Open");
+    MenuItem fileSave = new MenuItem("Save");
+    MenuItem fileExit = new MenuItem("Exit");
 
-        fileExit.setOnAction(eh -> {
-            Stage stage = (Stage) menubar.getScene().getWindow(); // <-- closing a window
-            stage.close();
-        });
+    Menu aboutMenu = new Menu("About");
 
-        fileMenu.getItems().addAll(fileNew, fileOpen, fileSave, fileExit);
+    fileExit.setOnAction(eh -> {
+      Stage stage = (Stage) menubar.getScene().getWindow(); // <-- closing a window
+      stage.close();
+    });
 
-        menubar.getMenus().addAll(fileMenu, aboutMenu);
-        
-        VBox vb = new VBox(menubar);
+    fileMenu.getItems().addAll(fileNew, fileOpen, fileSave, fileExit);
 
-        return vb;
-    }
+    menubar.getMenus().addAll(fileMenu, aboutMenu);
 
-    private Parent initializeContent() {
-        VBox vb = new VBox();
+    VBox vb = new VBox(menubar);
 
-        ObservableList<String> listItems = FXCollections.observableArrayList(
-            "Item 1",
-            "Item 2",
-            "Item 3"
-        );
-        ListView exampleListView = new ListView<>();
-        exampleListView.setItems(listItems);
+    return vb;
+  }
 
-        VBox.setVgrow(exampleListView, Priority.ALWAYS);
+  private Parent initializeContent() {
+    VBox vb = new VBox();
 
-        vb.getChildren().add(exampleListView);
-        
-        return vb;
-    }
+    ObservableList<String> listItems = FXCollections.observableArrayList(
+        "Item 1",
+        "Item 2",
+        "Item 3");
+    ListView exampleListView = new ListView<>();
+    exampleListView.setItems(listItems);
 
-    private Parent initializeComponents() {
-        BorderPane bp = new BorderPane();
+    VBox.setVgrow(exampleListView, Priority.ALWAYS);
 
-        bp.setTop(initializeMenu());
-        bp.setCenter(initializeContent());
+    vb.getChildren().add(exampleListView);
 
-        return bp;
-    }
+    return vb;
+  }
 
-    @Override
-    public void start(Stage stage) {
-        Scene scene = new Scene(initializeComponents(), 400, 200);
-        stage.setScene(scene);
-        stage.setTitle("Introduction to JavaFX: MenuBar");
-        stage.show();
-    }
+  private Parent initializeComponents() {
+    BorderPane bp = new BorderPane();
+
+    bp.setTop(initializeMenu());
+    bp.setCenter(initializeContent());
+
+    return bp;
+  }
+
+  @Override
+  public void start(Stage stage) {
+    Scene scene = new Scene(initializeComponents(), 400, 200);
+    stage.setScene(scene);
+    stage.setTitle("Introduction to JavaFX: MenuBar");
+    stage.show();
+  }
 }

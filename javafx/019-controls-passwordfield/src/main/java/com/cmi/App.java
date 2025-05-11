@@ -15,47 +15,47 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    private Parent center(Node n) {
-        HBox hbox = new HBox(n);
-        hbox.setAlignment(Pos.CENTER);
+  private Parent center(Node n) {
+    HBox hbox = new HBox(n);
+    hbox.setAlignment(Pos.CENTER);
 
-        VBox vbox = new VBox(hbox);
-        vbox.setAlignment(Pos.CENTER);
+    VBox vbox = new VBox(hbox);
+    vbox.setAlignment(Pos.CENTER);
 
-        return vbox;
-    }
+    return vbox;
+  }
 
-    private Parent createForm() {
-        GridPane gp = new GridPane();
-       
-        Label usernameLbl = new Label("Username");
-        Label passwordLbl = new Label("Password");
+  private Parent createForm() {
+    GridPane gp = new GridPane();
 
-        TextField usernameInput = new TextField();
-        PasswordField passwordInput = new PasswordField();
+    Label usernameLbl = new Label("Username");
+    Label passwordLbl = new Label("Password");
 
-        Button login = new Button("Login");
+    TextField usernameInput = new TextField();
+    PasswordField passwordInput = new PasswordField();
 
-        gp.add(usernameLbl, 0, 0);
-        gp.add(usernameInput, 1, 0);
-        gp.add(passwordLbl, 0, 1);
-        gp.add(passwordInput, 1, 1);
-        gp.add(login, 1, 2);
+    Button login = new Button("Login");
 
-        gp.setAlignment(Pos.CENTER);
+    gp.add(usernameLbl, 0, 0);
+    gp.add(usernameInput, 1, 0);
+    gp.add(passwordLbl, 0, 1);
+    gp.add(passwordInput, 1, 1);
+    gp.add(login, 1, 2);
 
-        return center(gp);
-    }
+    gp.setAlignment(Pos.CENTER);
 
-    public static void main(String[] args) {
-        launch();
-    }
+    return center(gp);
+  }
 
-    @Override
-    public void start(Stage stage) {
-        Scene helloWorld = new Scene(createForm(), 300, 300);
-        stage.setScene(helloWorld);
-        stage.setTitle("Introduction to JavaFX: PasswordField");
-        stage.show();
-    }
+  public static void main(String[] args) {
+    launch();
+  }
+
+  @Override
+  public void start(Stage stage) {
+    Scene helloWorld = new Scene(createForm(), 300, 300);
+    stage.setScene(helloWorld);
+    stage.setTitle("Introduction to JavaFX: PasswordField");
+    stage.show();
+  }
 }

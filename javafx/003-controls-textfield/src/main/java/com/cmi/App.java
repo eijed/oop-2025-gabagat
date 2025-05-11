@@ -13,67 +13,67 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    private float inputWidth;
-    private float inputHeight;
+  private float inputWidth;
+  private float inputHeight;
 
-    private Parent center(Node n) {
-        HBox hbox = new HBox(n);
-        hbox.setAlignment(Pos.CENTER);
+  private Parent center(Node n) {
+    HBox hbox = new HBox(n);
+    hbox.setAlignment(Pos.CENTER);
 
-        VBox vbox = new VBox(hbox);
-        vbox.setAlignment(Pos.CENTER);
+    VBox vbox = new VBox(hbox);
+    vbox.setAlignment(Pos.CENTER);
 
-        return vbox;
-    }
+    return vbox;
+  }
 
-    private Parent createForm() {
-        GridPane gp = new GridPane();
+  private Parent createForm() {
+    GridPane gp = new GridPane();
 
-        Label widthLabel = new Label("Width (mm)");
-        Label heightLabel = new Label("Height (mm)");
-        
-        TextField widthValue = new TextField();
-        TextField heightValue = new TextField();
+    Label widthLabel = new Label("Width (mm)");
+    Label heightLabel = new Label("Height (mm)");
 
-        gp.add(widthLabel, 0, 0);
-        gp.add(widthValue, 1, 0);
-        gp.add(heightLabel, 0, 1);
-        gp.add(heightValue, 1, 1);
+    TextField widthValue = new TextField();
+    TextField heightValue = new TextField();
 
-        gp.setAlignment(Pos.CENTER);
+    gp.add(widthLabel, 0, 0);
+    gp.add(widthValue, 1, 0);
+    gp.add(heightLabel, 0, 1);
+    gp.add(heightValue, 1, 1);
 
-        widthValue.setOnKeyPressed(e -> {
-            try {
-                inputWidth = Float.parseFloat(widthValue.getText());
-            } catch (NumberFormatException ex) {
-                System.out.println(ex.getMessage());
-            }
+    gp.setAlignment(Pos.CENTER);
 
-            System.out.println("Area: " + inputWidth * inputHeight);
-        });
+    widthValue.setOnKeyPressed(e -> {
+      try {
+        inputWidth = Float.parseFloat(widthValue.getText());
+      } catch (NumberFormatException ex) {
+        System.out.println(ex.getMessage());
+      }
 
-        heightValue.setOnKeyPressed(e -> {
-            try {
-                inputHeight = Float.parseFloat(heightValue.getText());
-            } catch (NumberFormatException ex) {
-                System.out.println(ex.getMessage());
-            }
+      System.out.println("Area: " + inputWidth * inputHeight);
+    });
 
-            System.out.println("Area: " + inputWidth * inputHeight);
-        });
+    heightValue.setOnKeyPressed(e -> {
+      try {
+        inputHeight = Float.parseFloat(heightValue.getText());
+      } catch (NumberFormatException ex) {
+        System.out.println(ex.getMessage());
+      }
 
-        return center(gp);
-    }
+      System.out.println("Area: " + inputWidth * inputHeight);
+    });
 
-    public static void main(String[] args) {
-        launch();
-    }
+    return center(gp);
+  }
 
-    @Override
-    public void start(Stage stage) {
-        Scene helloWorld = new Scene(createForm(), 300, 300);
-        stage.setScene(helloWorld);
-        stage.setTitle("Introduction to JavaFX: TextField");
-        stage.show();
-    }
+  public static void main(String[] args) {
+    launch();
+  }
+
+  @Override
+  public void start(Stage stage) {
+    Scene helloWorld = new Scene(createForm(), 300, 300);
+    stage.setScene(helloWorld);
+    stage.setTitle("Introduction to JavaFX: TextField");
+    stage.show();
+  }
 }

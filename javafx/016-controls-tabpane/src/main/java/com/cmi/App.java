@@ -11,45 +11,45 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    public static void main(String[] args) {
-        launch();
+  public static void main(String[] args) {
+    launch();
+  }
+
+  private Tab createTab(String tabName, int start, int end) {
+    Tab tab1 = new Tab(tabName);
+    HBox container = new HBox();
+
+    for (int i = start; i < end; i++) {
+      Label num = new Label(String.valueOf(i));
+      container.getChildren().add(num);
     }
 
-    private Tab createTab(String tabName, int start, int end) {
-        Tab tab1 = new Tab(tabName);
-        HBox container = new HBox();
+    tab1.setContent(container);
 
-        for (int i = start; i < end; i++) {
-            Label num = new Label(String.valueOf(i));
-            container.getChildren().add(num);
-        }
+    return tab1;
+  }
 
-        tab1.setContent(container);
+  private Parent initializeComponents() {
+    VBox vb = new VBox();
 
-        return tab1;
-    }
+    TabPane tp = new TabPane();
 
-    private Parent initializeComponents() {
-        VBox vb = new VBox();
+    tp.getTabs().add(createTab("Tab 1", 0, 11));
+    tp.getTabs().add(createTab("Tab 2", 11, 21));
 
-        TabPane tp = new TabPane();
+    // disable closing of tabs
+    tp.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 
-        tp.getTabs().add(createTab("Tab 1", 0, 11));
-        tp.getTabs().add(createTab("Tab 2", 11, 21));
+    vb.getChildren().add(tp);
 
-        // disable closing of tabs
-        tp.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
-        
-        vb.getChildren().add(tp);
+    return vb;
+  }
 
-        return vb;
-    }
-
-    @Override
-    public void start(Stage stage) {
-        Scene scene = new Scene(initializeComponents(), 400, 200);
-        stage.setScene(scene);
-        stage.setTitle("Introduction to JavaFX: TabPane");
-        stage.show();
-    }
+  @Override
+  public void start(Stage stage) {
+    Scene scene = new Scene(initializeComponents(), 400, 200);
+    stage.setScene(scene);
+    stage.setTitle("Introduction to JavaFX: TabPane");
+    stage.show();
+  }
 }

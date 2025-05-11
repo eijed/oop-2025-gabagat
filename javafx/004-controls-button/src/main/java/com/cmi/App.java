@@ -14,64 +14,64 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    private float inputWidth;
-    private float inputHeight;
+  private float inputWidth;
+  private float inputHeight;
 
-    private Parent center(Node n) {
-        HBox hbox = new HBox(n);
-        hbox.setAlignment(Pos.CENTER);
+  private Parent center(Node n) {
+    HBox hbox = new HBox(n);
+    hbox.setAlignment(Pos.CENTER);
 
-        VBox vbox = new VBox(hbox);
-        vbox.setAlignment(Pos.CENTER);
+    VBox vbox = new VBox(hbox);
+    vbox.setAlignment(Pos.CENTER);
 
-        return vbox;
-    }
+    return vbox;
+  }
 
-    private Parent createForm() {
-        GridPane gp = new GridPane();
+  private Parent createForm() {
+    GridPane gp = new GridPane();
 
-        Label widthLabel = new Label("Width (mm)");
-        Label heightLabel = new Label("Height (mm)");
-        Label outputLabel = new Label();
-        
-        TextField widthValue = new TextField();
-        TextField heightValue = new TextField();
-        Button calcBtn = new Button();
-        calcBtn.setText("Calculate");
+    Label widthLabel = new Label("Width (mm)");
+    Label heightLabel = new Label("Height (mm)");
+    Label outputLabel = new Label();
 
-        gp.add(widthLabel, 0, 0);
-        gp.add(widthValue, 1, 0);
-        gp.add(heightLabel, 0, 1);
-        gp.add(heightValue, 1, 1);
-        gp.add(calcBtn, 1, 2);
-        gp.add(outputLabel, 1, 3);
-        
-        gp.setAlignment(Pos.CENTER);
+    TextField widthValue = new TextField();
+    TextField heightValue = new TextField();
+    Button calcBtn = new Button();
+    calcBtn.setText("Calculate");
 
-        calcBtn.setOnAction(e -> {
-            try {
-                inputWidth = Float.parseFloat(widthValue.getText());
-                inputHeight = Float.parseFloat(heightValue.getText());
-            } catch (NumberFormatException ex) {
-                outputLabel.setText("Invalid input");
-                return;
-            }
+    gp.add(widthLabel, 0, 0);
+    gp.add(widthValue, 1, 0);
+    gp.add(heightLabel, 0, 1);
+    gp.add(heightValue, 1, 1);
+    gp.add(calcBtn, 1, 2);
+    gp.add(outputLabel, 1, 3);
 
-            outputLabel.setText("Area: " + (inputWidth * inputHeight));
-        });
+    gp.setAlignment(Pos.CENTER);
 
-        return center(gp);
-    }
+    calcBtn.setOnAction(e -> {
+      try {
+        inputWidth = Float.parseFloat(widthValue.getText());
+        inputHeight = Float.parseFloat(heightValue.getText());
+      } catch (NumberFormatException ex) {
+        outputLabel.setText("Invalid input");
+        return;
+      }
 
-    public static void main(String[] args) {
-        launch();
-    }
+      outputLabel.setText("Area: " + (inputWidth * inputHeight));
+    });
 
-    @Override
-    public void start(Stage stage) {
-        Scene helloWorld = new Scene(createForm(), 300, 300);
-        stage.setScene(helloWorld);
-        stage.setTitle("Introduction to JavaFX: Button");
-        stage.show();
-    }
+    return center(gp);
+  }
+
+  public static void main(String[] args) {
+    launch();
+  }
+
+  @Override
+  public void start(Stage stage) {
+    Scene helloWorld = new Scene(createForm(), 300, 300);
+    stage.setScene(helloWorld);
+    stage.setTitle("Introduction to JavaFX: Button");
+    stage.show();
+  }
 }

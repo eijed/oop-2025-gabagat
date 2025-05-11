@@ -10,35 +10,35 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    public static void main(String[] args) {
-        launch();
-    }
+  public static void main(String[] args) {
+    launch();
+  }
 
-    private Parent initializeComponents() {
-        GridPane gp = new GridPane();
+  private Parent initializeComponents() {
+    GridPane gp = new GridPane();
 
-        Label programLabel = new Label("Program");
-        ChoiceBox cb = new ChoiceBox();
-        ObservableList<String> opts = cb.getItems();
+    Label programLabel = new Label("Program");
+    ChoiceBox cb = new ChoiceBox();
+    ObservableList<String> opts = cb.getItems();
 
-        opts.addAll("ACT", "BSCS");
+    opts.addAll("ACT", "BSCS");
 
-        gp.add(programLabel, 0, 0);
-        gp.add(cb, 1, 0);
-        cb.setValue("BSCS"); // pre-select
+    gp.add(programLabel, 0, 0);
+    gp.add(cb, 1, 0);
+    cb.setValue("BSCS"); // pre-select
 
-        cb.setOnAction(eh -> {
-            System.out.println(cb.getValue());
-        });
+    cb.setOnAction(eh -> {
+      System.out.println(cb.getValue());
+    });
 
-        return gp;
-    }
+    return gp;
+  }
 
-    @Override
-    public void start(Stage stage) {
-        Scene scene = new Scene(initializeComponents(), 400, 200);
-        stage.setScene(scene);
-        stage.setTitle("Introduction to JavaFX: ChoiceBox");
-        stage.show();
-    }
+  @Override
+  public void start(Stage stage) {
+    Scene scene = new Scene(initializeComponents(), 400, 200);
+    stage.setScene(scene);
+    stage.setTitle("Introduction to JavaFX: ChoiceBox");
+    stage.show();
+  }
 }

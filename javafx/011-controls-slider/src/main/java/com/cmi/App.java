@@ -9,31 +9,31 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
-  public static void main(String[] args) {
-    launch();
-  }
+    public static void main(String[] args) {
+        launch();
+    }
 
-  private Parent initializeComponents() {
-    GridPane gp = new GridPane();
+    private Parent initializeComponents() {
+        GridPane gp = new GridPane();
 
-    Label valLabel = new Label("0.0");
+        Label valLabel = new Label("0.0");
 
-    Slider slider1 = new Slider(0.0, 10.0, 0.0);
-    gp.add(slider1, 0, 0);
-    gp.add(valLabel, 1, 0);
+        Slider slider1 = new Slider(0.0, 10.0, 0.0);
+        gp.add(slider1, 0, 0);
+        gp.add(valLabel, 1, 0);
 
-    slider1.valueProperty().addListener((observable, oldVal, newVal) -> {
-      valLabel.setText(String.valueOf(newVal.intValue()));
-    });
+        slider1.valueProperty().addListener((observable, oldVal, newVal) -> {
+            valLabel.setText(String.valueOf(newVal.intValue()));
+        });
 
-    return gp;
-  }
+        return gp;
+    }
 
-  @Override
-  public void start(Stage stage) {
-    Scene scene = new Scene(initializeComponents(), 400, 200);
-    stage.setScene(scene);
-    stage.setTitle("Introduction to JavaFX: Slider");
-    stage.show();
-  }
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(initializeComponents(), 400, 200);
+        stage.setScene(scene);
+        stage.setTitle("Introduction to JavaFX: Slider");
+        stage.show();
+    }
 }

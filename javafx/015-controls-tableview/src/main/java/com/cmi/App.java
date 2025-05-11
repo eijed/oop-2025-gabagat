@@ -13,60 +13,60 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-  public static void main(String[] args) {
-    launch();
-  }
+    public static void main(String[] args) {
+        launch();
+    }
 
-  private Parent initializeComponents() {
-    VBox vb = new VBox();
+    private Parent initializeComponents() {
+        VBox vb = new VBox();
 
-    TableView tv = new TableView();
+        TableView tv = new TableView();
 
-    // columns
-    TableColumn<Student, String> colId = new TableColumn<>("ID");
-    colId.setCellValueFactory(cell -> cell.getValue().getId());
+        // columns
+        TableColumn<Student, String> colId = new TableColumn<>("ID");
+        colId.setCellValueFactory(cell -> cell.getValue().getId());
 
-    TableColumn<Student, String> nameId = new TableColumn<>("NAME");
-    nameId.setCellValueFactory(cell -> cell.getValue().getName());
+        TableColumn<Student, String> nameId = new TableColumn<>("NAME");
+        nameId.setCellValueFactory(cell -> cell.getValue().getName());
 
-    // example data
-    ObservableList<Student> students = FXCollections.observableArrayList(
-        new Student("25-0001", "Juan Tamad"),
-        new Student("25-0002", "Pedro Penduko"));
+        // example data
+        ObservableList<Student> students = FXCollections.observableArrayList(
+                new Student("25-0001", "Juan Tamad"),
+                new Student("25-0002", "Pedro Penduko"));
 
-    // add our columns
-    tv.getColumns().addAll(colId, nameId);
-    // show data to table
-    tv.setItems(students);
+        // add our columns
+        tv.getColumns().addAll(colId, nameId);
+        // show data to table
+        tv.setItems(students);
 
-    vb.getChildren().add(tv);
+        vb.getChildren().add(tv);
 
-    return vb;
-  }
+        return vb;
+    }
 
-  @Override
-  public void start(Stage stage) {
-    Scene scene = new Scene(initializeComponents(), 400, 200);
-    stage.setScene(scene);
-    stage.setTitle("Introduction to JavaFX: TableView");
-    stage.show();
-  }
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(initializeComponents(), 400, 200);
+        stage.setScene(scene);
+        stage.setTitle("Introduction to JavaFX: TableView");
+        stage.show();
+    }
 }
 
 class Student {
-  private final StringProperty id;
-  private final StringProperty name;
+    private final StringProperty id;
+    private final StringProperty name;
 
-  public Student(String id, String name) {
-    this.id = new SimpleStringProperty(id);
-    this.name = new SimpleStringProperty(name);
-  }
+    public Student(String id, String name) {
+        this.id = new SimpleStringProperty(id);
+        this.name = new SimpleStringProperty(name);
+    }
 
-  public StringProperty getId() {
-    return id;
-  }
+    public StringProperty getId() {
+        return id;
+    }
 
-  public StringProperty getName() {
-    return name;
-  }
+    public StringProperty getName() {
+        return name;
+    }
 }

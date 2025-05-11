@@ -9,31 +9,31 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 public class App extends Application {
-  public static void main(String[] args) {
-    launch();
-  }
+    public static void main(String[] args) {
+        launch();
+    }
 
-  private Parent initializeComponents() {
-    GridPane gp = new GridPane();
+    private Parent initializeComponents() {
+        GridPane gp = new GridPane();
 
-    Label startDateLabel = new Label("Start Date");
-    DatePicker dp = new DatePicker();
+        Label startDateLabel = new Label("Start Date");
+        DatePicker dp = new DatePicker();
 
-    dp.valueProperty().addListener((obs, oldVal, newVal) -> {
-      System.out.println(oldVal + " -> " + newVal);
-    });
+        dp.valueProperty().addListener((obs, oldVal, newVal) -> {
+            System.out.println(oldVal + " -> " + newVal);
+        });
 
-    gp.add(startDateLabel, 0, 0);
-    gp.add(dp, 1, 0);
+        gp.add(startDateLabel, 0, 0);
+        gp.add(dp, 1, 0);
 
-    return gp;
-  }
+        return gp;
+    }
 
-  @Override
-  public void start(Stage stage) {
-    Scene scene = new Scene(initializeComponents(), 400, 200);
-    stage.setScene(scene);
-    stage.setTitle("Introduction to JavaFX: DatePicker");
-    stage.show();
-  }
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(initializeComponents(), 400, 200);
+        stage.setScene(scene);
+        stage.setTitle("Introduction to JavaFX: DatePicker");
+        stage.show();
+    }
 }

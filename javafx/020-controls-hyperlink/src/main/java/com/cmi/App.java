@@ -30,7 +30,7 @@ public class App extends Application {
 
     private Parent createForm() {
         GridPane gp = new GridPane();
-       
+
         Label usernameLbl = new Label("Username");
         Label passwordLbl = new Label("Password");
 

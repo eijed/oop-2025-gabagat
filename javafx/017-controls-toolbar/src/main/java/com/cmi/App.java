@@ -16,53 +16,53 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-  public static void main(String[] args) {
-    launch();
-  }
+    public static void main(String[] args) {
+        launch();
+    }
 
-  private Parent initializeToolbar() {
-    ToolBar tb = new ToolBar();
+    private Parent initializeToolbar() {
+        ToolBar tb = new ToolBar();
 
-    TextField searchQuery = new TextField();
-    Button searchBtn = new Button("Search");
-    Button exportBtn = new Button("Export");
+        TextField searchQuery = new TextField();
+        Button searchBtn = new Button("Search");
+        Button exportBtn = new Button("Export");
 
-    tb.getItems().addAll(searchQuery, searchBtn, new Separator(), exportBtn);
+        tb.getItems().addAll(searchQuery, searchBtn, new Separator(), exportBtn);
 
-    return tb;
-  }
+        return tb;
+    }
 
-  private Parent initializeContent() {
-    VBox vb = new VBox();
+    private Parent initializeContent() {
+        VBox vb = new VBox();
 
-    ObservableList<String> listItems = FXCollections.observableArrayList(
-        "Item 1",
-        "Item 2",
-        "Item 3");
-    ListView<String> exampleListView = new ListView<>();
-    exampleListView.setItems(listItems);
+        ObservableList<String> listItems = FXCollections.observableArrayList(
+                "Item 1",
+                "Item 2",
+                "Item 3");
+        ListView<String> exampleListView = new ListView<>();
+        exampleListView.setItems(listItems);
 
-    VBox.setVgrow(exampleListView, Priority.ALWAYS);
+        VBox.setVgrow(exampleListView, Priority.ALWAYS);
 
-    vb.getChildren().add(exampleListView);
+        vb.getChildren().add(exampleListView);
 
-    return vb;
-  }
+        return vb;
+    }
 
-  private Parent initializeComponents() {
-    BorderPane bp = new BorderPane();
+    private Parent initializeComponents() {
+        BorderPane bp = new BorderPane();
 
-    bp.setTop(initializeToolbar());
-    bp.setCenter(initializeContent());
+        bp.setTop(initializeToolbar());
+        bp.setCenter(initializeContent());
 
-    return bp;
-  }
+        return bp;
+    }
 
-  @Override
-  public void start(Stage stage) {
-    Scene scene = new Scene(initializeComponents(), 400, 200);
-    stage.setScene(scene);
-    stage.setTitle("Introduction to JavaFX: ToolBar");
-    stage.show();
-  }
+    @Override
+    public void start(Stage stage) {
+        Scene scene = new Scene(initializeComponents(), 400, 200);
+        stage.setScene(scene);
+        stage.setTitle("Introduction to JavaFX: ToolBar");
+        stage.show();
+    }
 }

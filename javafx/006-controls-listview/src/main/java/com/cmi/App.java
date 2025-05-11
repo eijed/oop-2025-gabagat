@@ -15,70 +15,70 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class App extends Application {
-  ObservableList<String> todoItems = FXCollections.observableArrayList();
+    ObservableList<String> todoItems = FXCollections.observableArrayList();
 
-  private Parent center(Node n) {
-    HBox hbox = new HBox(n);
-    hbox.setAlignment(Pos.CENTER);
+    private Parent center(Node n) {
+        HBox hbox = new HBox(n);
+        hbox.setAlignment(Pos.CENTER);
 
-    VBox vbox = new VBox(hbox);
-    vbox.setAlignment(Pos.CENTER);
+        VBox vbox = new VBox(hbox);
+        vbox.setAlignment(Pos.CENTER);
 
-    return vbox;
-  }
-
-  private void addTodoItem(TextField textField) {
-    String item = textField.getText();
-
-    if (item.length() > 0) {
-      todoItems.add(item);
+        return vbox;
     }
 
-    textField.clear();
-  }
+    private void addTodoItem(TextField textField) {
+        String item = textField.getText();
 
-  private void removeTodoItem(ListView listView) {
-    int selected = listView.getSelectionModel().getSelectedIndex();
+        if (item.length() > 0) {
+            todoItems.add(item);
+        }
 
-    if (selected > -1) {
-      todoItems.remove(selected);
+        textField.clear();
     }
-  }
 
-  private Parent createForm() {
-    VBox vbox = new VBox();
+    private void removeTodoItem(ListView listView) {
+        int selected = listView.getSelectionModel().getSelectedIndex();
 
-    TextField newTodo = new TextField();
-    Button addTodo = new Button();
-    Button removeTodo = new Button();
+        if (selected > -1) {
+            todoItems.remove(selected);
+        }
+    }
 
-    ListView<String> todoListView = new ListView(todoItems);
+    private Parent createForm() {
+        VBox vbox = new VBox();
 
-    addTodo.setText("Add");
-    removeTodo.setText("Remove Selected");
+        TextField newTodo = new TextField();
+        Button addTodo = new Button();
+        Button removeTodo = new Button();
 
-    ObservableList<Node> container = vbox.getChildren();
+        ListView<String> todoListView = new ListView(todoItems);
 
-    container.add(newTodo);
-    container.add(addTodo);
-    container.add(removeTodo);
-    container.add(todoListView);
+        addTodo.setText("Add");
+        removeTodo.setText("Remove Selected");
 
-    addTodo.setOnAction(e -> addTodoItem(newTodo));
-    removeTodo.setOnAction(e -> removeTodoItem(todoListView));
+        ObservableList<Node> container = vbox.getChildren();
 
-    return center(vbox);
-  }
+        container.add(newTodo);
+        container.add(addTodo);
+        container.add(removeTodo);
+        container.add(todoListView);
 
-  public static void main(String[] args) {
-    launch();
-  }
+        addTodo.setOnAction(e -> addTodoItem(newTodo));
+        removeTodo.setOnAction(e -> removeTodoItem(todoListView));
 
-  @Override
-  public void start(Stage stage) {
-    Scene todo = new Scene(createForm(), 300, 300);
-    stage.setScene(todo);
-    stage.setTitle("Introduction to JavaFX: ListView");
-    stage.show();
-  }
+        return center(vbox);
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+    @Override
+    public void start(Stage stage) {
+        Scene todo = new Scene(createForm(), 300, 300);
+        stage.setScene(todo);
+        stage.setTitle("Introduction to JavaFX: ListView");
+        stage.show();
+    }
 }

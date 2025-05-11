@@ -21,21 +21,21 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class App extends Application {
-  private Parent createContent() {
-    return new FlowPane(
-        new Text("Hello"),
-        new Text("World!"));
-  }
+    private Parent createContent() {
+        return new FlowPane(
+                new Text("Hello"),
+                new Text("World!"));
+    }
 
-  public static void main(String[] args) {
-    launch();
-  }
+    public static void main(String[] args) {
+        launch();
+    }
 
-  @Override
-  public void start(Stage stage) {
-    Scene helloWorld = new Scene(createContent(), 300, 300);
-    stage.setScene(helloWorld);
-    stage.setTitle("Introduction to JavaFX: Scene");
-    stage.show();
-  }
+    @Override
+    public void start(Stage stage) {
+        Scene helloWorld = new Scene(createContent(), 300, 300);
+        stage.setScene(helloWorld);
+        stage.setTitle("Introduction to JavaFX: Scene");
+        stage.show();
+    }
 }

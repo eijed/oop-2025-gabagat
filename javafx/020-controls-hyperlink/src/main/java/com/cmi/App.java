@@ -67,7 +67,7 @@ public class App extends Application {
     public void start(Stage stage) {
         Scene helloWorld = new Scene(createForm(), 300, 300);
         stage.setScene(helloWorld);
-        stage.setTitle("Introduction to JavaFX: PasswordField");
+        stage.setTitle("Introduction to JavaFX: Hyperlink");
         stage.show();
     }
 }

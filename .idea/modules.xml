@@ -20,7 +20,8 @@
       <module fileurl="file://$PROJECT_DIR$/basics/016_quiz/001_basics_016_quiz.iml" filepath="$PROJECT_DIR$/basics/016_quiz/001_basics_016_quiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/basics/017_function/001_basics_017_function.iml" filepath="$PROJECT_DIR$/basics/017_function/001_basics_017_function.iml" />
       <module fileurl="file://$PROJECT_DIR$/basics/018_function2/001_basics_018_function2.iml" filepath="$PROJECT_DIR$/basics/018_function2/001_basics_018_function2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basics/019-error/001_basics_019-error.iml" filepath="$PROJECT_DIR$/basics/019-error/001_basics_019-error.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/019_error/001_basics_019_error.iml" filepath="$PROJECT_DIR$/basics/019_error/001_basics_019_error.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/001_class/002_oop_001_class.iml" filepath="$PROJECT_DIR$/oop/001_class/002_oop_001_class.iml" />
     </modules>
   </component>
 </project>

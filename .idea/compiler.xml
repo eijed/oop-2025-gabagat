@@ -6,8 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="003_javafx_003_controls_textfield" />
+        <module name="003_javafx_002_scene" />
         <module name="003_javafx_001_scene" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="003-controls-textfield" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

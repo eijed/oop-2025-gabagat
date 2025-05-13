@@ -5,6 +5,11 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/javafx/001-scene/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/001_scene/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/002-scene2/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/003-controls-textfield/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/002_scene2/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/003_controls_textfield/pom.xml" />
       </list>
     </option>
   </component>

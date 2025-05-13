@@ -22,6 +22,9 @@
       <module fileurl="file://$PROJECT_DIR$/basics/018_function2/001_basics_018_function2.iml" filepath="$PROJECT_DIR$/basics/018_function2/001_basics_018_function2.iml" />
       <module fileurl="file://$PROJECT_DIR$/basics/019_error/001_basics_019_error.iml" filepath="$PROJECT_DIR$/basics/019_error/001_basics_019_error.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/001_class/002_oop_001_class.iml" filepath="$PROJECT_DIR$/oop/001_class/002_oop_001_class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/002_class2/002_oop_002_class2.iml" filepath="$PROJECT_DIR$/oop/002_class2/002_oop_002_class2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/003_quiz/002_oop_003_quiz.iml" filepath="$PROJECT_DIR$/oop/003_quiz/002_oop_003_quiz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/004_inheritance/002_oop_004_inheritance.iml" filepath="$PROJECT_DIR$/oop/004_inheritance/002_oop_004_inheritance.iml" />
     </modules>
   </component>
 </project>

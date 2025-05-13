@@ -16,6 +16,6 @@ public class MainTest {
 
         System.setOut(originalOut);
 
-        assertEquals("/ by zero", outContent.toString());
+        assertEquals("/ by zero\n", outContent.toString());
     }
 }

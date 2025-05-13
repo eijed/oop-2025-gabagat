@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/basics/001_hello/001_hello.iml" filepath="$PROJECT_DIR$/basics/001_hello/001_hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/002_output/002_output.iml" filepath="$PROJECT_DIR$/basics/002_output/002_output.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/003_scanner/003_scanner.iml" filepath="$PROJECT_DIR$/basics/003_scanner/003_scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/004_vars/004_vars.iml" filepath="$PROJECT_DIR$/basics/004_vars/004_vars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/005_scope/005_scope.iml" filepath="$PROJECT_DIR$/basics/005_scope/005_scope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/006_strings/006_strings.iml" filepath="$PROJECT_DIR$/basics/006_strings/006_strings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/007_strings2/007_strings2.iml" filepath="$PROJECT_DIR$/basics/007_strings2/007_strings2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/008_quiz/008_quiz.iml" filepath="$PROJECT_DIR$/basics/008_quiz/008_quiz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/009_if/009_if.iml" filepath="$PROJECT_DIR$/basics/009_if/009_if.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/010_if2/010_if2.iml" filepath="$PROJECT_DIR$/basics/010_if2/010_if2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/011_while/011_while.iml" filepath="$PROJECT_DIR$/basics/011_while/011_while.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/012_while2/012_while2.iml" filepath="$PROJECT_DIR$/basics/012_while2/012_while2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/013_while3/013_while3.iml" filepath="$PROJECT_DIR$/basics/013_while3/013_while3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/014_for/014_for.iml" filepath="$PROJECT_DIR$/basics/014_for/014_for.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/015_for2/015_for2.iml" filepath="$PROJECT_DIR$/basics/015_for2/015_for2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/016_quiz/016_quiz.iml" filepath="$PROJECT_DIR$/basics/016_quiz/016_quiz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/017_function/017_function.iml" filepath="$PROJECT_DIR$/basics/017_function/017_function.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/018_function2/018_function2.iml" filepath="$PROJECT_DIR$/basics/018_function2/018_function2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basics/019-error/019-error.iml" filepath="$PROJECT_DIR$/basics/019-error/019-error.iml" />
+    </modules>
+  </component>
+</project>

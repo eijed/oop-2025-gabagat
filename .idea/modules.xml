@@ -25,6 +25,15 @@
       <module fileurl="file://$PROJECT_DIR$/oop/002_class2/002_oop_002_class2.iml" filepath="$PROJECT_DIR$/oop/002_class2/002_oop_002_class2.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/003_quiz/002_oop_003_quiz.iml" filepath="$PROJECT_DIR$/oop/003_quiz/002_oop_003_quiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop/004_inheritance/002_oop_004_inheritance.iml" filepath="$PROJECT_DIR$/oop/004_inheritance/002_oop_004_inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/005_inheritance2/002_oop_005_inheritance2.iml" filepath="$PROJECT_DIR$/oop/005_inheritance2/002_oop_005_inheritance2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/006_inheritance3/002_oop_006_inheritance3.iml" filepath="$PROJECT_DIR$/oop/006_inheritance3/002_oop_006_inheritance3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/007_encapsulation/002_oop_007_encapsulation.iml" filepath="$PROJECT_DIR$/oop/007_encapsulation/002_oop_007_encapsulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/008_encapsulation2/002_oop_008_encapsulation2.iml" filepath="$PROJECT_DIR$/oop/008_encapsulation2/002_oop_008_encapsulation2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/009_encapsulation3/002_oop_009_encapsulation3.iml" filepath="$PROJECT_DIR$/oop/009_encapsulation3/002_oop_009_encapsulation3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/010_encapsulation4/002_oop_010_encapsulation4.iml" filepath="$PROJECT_DIR$/oop/010_encapsulation4/002_oop_010_encapsulation4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/011_polymorphism/002_oop_011_polymorphism.iml" filepath="$PROJECT_DIR$/oop/011_polymorphism/002_oop_011_polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/012_abstraction/002_oop_012_abstraction.iml" filepath="$PROJECT_DIR$/oop/012_abstraction/002_oop_012_abstraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oop/013_quiz/002_oop_013_quiz.iml" filepath="$PROJECT_DIR$/oop/013_quiz/002_oop_013_quiz.iml" />
     </modules>
   </component>
 </project>

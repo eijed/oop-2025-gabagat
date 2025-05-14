@@ -7,8 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="003_javafx_003_controls_textfield" />
-        <module name="003_javafx_002_scene" />
+        <module name="003_javafx_010_controls_radiobutton" />
         <module name="003_javafx_001_scene" />
+        <module name="003_javafx_007_controls_listview2" />
+        <module name="003_javafx_004_controls_buttons" />
+        <module name="003_javafx_006_controls_listview" />
+        <module name="003_javafx_002_scene" />
+        <module name="003_javafx_009_controls_choicebox" />
+        <module name="003_javafx_005_controls_buttonbar" />
+        <module name="003_javafx_008_controls-checkbox" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

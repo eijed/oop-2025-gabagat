@@ -10,10 +10,17 @@
         <option value="$PROJECT_DIR$/javafx/003-controls-textfield/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/002_scene2/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/003_controls_textfield/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/004_controls_button/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/005_controls_buttonbar/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/006_controls_listview/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/007_controls_listview2/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/008_controls_checkbox/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/009_controls_choicebox/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/010_controls_radiobutton/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

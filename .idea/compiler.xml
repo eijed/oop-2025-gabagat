@@ -6,20 +6,36 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="003_javafx_003_controls_textfield" />
-        <module name="003_javafx_010_controls_radiobutton" />
-        <module name="003_javafx_001_scene" />
-        <module name="003_javafx_007_controls_listview2" />
+        <module name="003_javafx_019_controls_passwordfield" />
+        <module name="003_javafx_021_controls_pagination" />
+        <module name="003_javafx_016_controls_tabpane" />
+        <module name="003_javafx_015_controls_tableview" />
+        <module name="003_javafx_013_controls_date_picker" />
+        <module name="003_javafx_023_controls_textarea" />
         <module name="003_javafx_004_controls_buttons" />
+        <module name="003_javafx_011_controls_slider" />
+        <module name="003_javafx_012_controls_spinner" />
+        <module name="003_javafx_018_controls_menubar" />
+        <module name="003_javafx_010_controls_radiobutton" />
+        <module name="003_javafx_020_controls_hyperlink" />
+        <module name="003_javafx_024_controls_filechooser" />
+        <module name="003_javafx_007_controls_listview2" />
         <module name="003_javafx_006_controls_listview" />
+        <module name="003_javafx_014_controls_scrollpane" />
         <module name="003_javafx_002_scene" />
-        <module name="003_javafx_009_controls_choicebox" />
         <module name="003_javafx_005_controls_buttonbar" />
         <module name="003_javafx_008_controls-checkbox" />
+        <module name="003_javafx_003_controls_textfield" />
+        <module name="003_javafx_001_scene" />
+        <module name="003_javafx_017_controls_toolbar" />
+        <module name="003_javafx_025_controls_alert" />
+        <module name="003_javafx_022_controls_pagination" />
+        <module name="003_javafx_009_controls_choicebox" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="003-controls-textfield" target="1.8" />
+      <module name="011-controls-slider" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -17,6 +17,22 @@
         <option value="$PROJECT_DIR$/javafx/008_controls_checkbox/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/009_controls_choicebox/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/010_controls_radiobutton/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/011-controls-slider/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/011_controls_slider/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/012_controls_spinner/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/013_controls_date_picker/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/014_controls_scrollpane/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/015_controls_tableview/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/016_controls_tabpane/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/017_controls_toolbar/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/018_controls_menubar/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/019_controls_passwordfield/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/020_controls_hyperlink/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/021_controls_pagination/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/022_controls_accordion/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/023_controls_textarea/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/024_controls_filechooser/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/025_controls_alert/pom.xml" />
       </list>
     </option>
   </component>

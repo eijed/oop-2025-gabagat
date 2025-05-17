@@ -33,6 +33,11 @@
         <option value="$PROJECT_DIR$/javafx/023_controls_textarea/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/024_controls_filechooser/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/025_controls_alert/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/026_layout_hbox/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/027_layout_vbox/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/028_layout_borderpane/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/029_layout_flowpane/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/030_layout_gridpane/pom.xml" />
       </list>
     </option>
   </component>

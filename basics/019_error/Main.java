@@ -23,7 +23,7 @@ public class Main {
         
             System.out.print("Output" + n);
         } catch (??? e) {
-            ??? // <-- print the error message we got here
+            ??? // <-- print the error message we got here. make sure to have a new line after
         }
     }
 }

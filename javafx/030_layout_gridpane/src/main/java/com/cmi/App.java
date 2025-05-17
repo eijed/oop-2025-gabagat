@@ -36,7 +36,7 @@ public class App extends Application {
     public void start(Stage stage) {
         Scene helloWorld = new Scene(initializeContent(), 500, 500);
         stage.setScene(helloWorld);
-        stage.setTitle("Introduction to JavaFX: GridPage Layout");
+        stage.setTitle("Introduction to JavaFX: GridPane Layout");
         stage.show();
     }
 }

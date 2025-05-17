@@ -21,6 +21,7 @@
         <module name="003_javafx_012_controls_spinner" />
         <module name="003_javafx_030_layout_gridpane" />
         <module name="003_javafx_018_controls_menubar" />
+        <module name="003_javafx_032_layout_tilepane" />
         <module name="003_javafx_010_controls_radiobutton" />
         <module name="003_javafx_020_controls_hyperlink" />
         <module name="003_javafx_024_controls_filechooser" />

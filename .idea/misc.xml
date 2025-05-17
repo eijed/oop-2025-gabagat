@@ -38,6 +38,7 @@
         <option value="$PROJECT_DIR$/javafx/028_layout_borderpane/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/029_layout_flowpane/pom.xml" />
         <option value="$PROJECT_DIR$/javafx/030_layout_gridpane/pom.xml" />
+        <option value="$PROJECT_DIR$/javafx/031_layout_textflow/pom.xml" />
       </list>
     </option>
   </component>

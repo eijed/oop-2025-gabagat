@@ -22,6 +22,7 @@
         <module name="003_javafx_030_layout_gridpane" />
         <module name="003_javafx_018_controls_menubar" />
         <module name="003_javafx_032_layout_tilepane" />
+        <module name="003_javafx_033_layout_anchorpane" />
         <module name="003_javafx_010_controls_radiobutton" />
         <module name="003_javafx_020_controls_hyperlink" />
         <module name="003_javafx_024_controls_filechooser" />
@@ -33,6 +34,7 @@
         <module name="003_javafx_005_controls_buttonbar" />
         <module name="003_javafx_008_controls-checkbox" />
         <module name="003_javafx_003_controls_textfield" />
+        <module name="003_javafx_034_layout_stackpane" />
         <module name="003_javafx_001_scene" />
         <module name="003_javafx_017_controls_toolbar" />
         <module name="003_javafx_025_controls_alert" />

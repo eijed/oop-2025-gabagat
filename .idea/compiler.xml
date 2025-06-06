@@ -22,6 +22,7 @@
         <module name="003_javafx_030_layout_gridpane" />
         <module name="003_javafx_018_controls_menubar" />
         <module name="003_javafx_032_layout_tilepane" />
+        <module name="003_javafx_008_controls_checkbox" />
         <module name="003_javafx_033_layout_anchorpane" />
         <module name="003_javafx_010_controls_radiobutton" />
         <module name="003_javafx_020_controls_hyperlink" />

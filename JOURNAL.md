@@ -2,28 +2,28 @@
 
 ---
 
-📅 Date: YYYY-MM-DD
-<br/>📍 Topic / Module Covered: (e.g., "Installing Java", "Loops", "Conditions")
+📅 Date: 2025/6/21
+<br/>📍 Topic / Module Covered: journal editing
 
 
 ### What I Did Today
 
-content here
+i made another copy of my journal using git bash.
 
 ### What I Learned
 
-content here
+i have learned that using git bash was a bit confusing. 
 
 ### Problems I Faced
 
-content here
+i have no idea where to start, so i asked my friend for help.
 
 #### Reflections
 
-content here
+i would like to have a deeper understanding in using git bash and java.
 
 #### Next Steps
 
-content here
+my next step is to learned java ad continue learning git bash.
 
 ---

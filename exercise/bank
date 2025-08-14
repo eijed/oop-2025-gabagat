@@ -1,0 +1,179 @@
+// bank
+// savings, deposit, withdrawal
+// teller (cashier)
+// receipt
+// customer
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Banking {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        Bank bank = new Bank();
+        Teller teller = new Teller("Danna");
+
+        // Add customer
+        bank.addCustomer(new Customer("Aldrich", 1000));
+
+        boolean running = true;
+        while (running) {
+            System.out.println("===== BANK MENU =====");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. View Customers");
+            System.out.println("4. View Total Bank Capital");
+            System.out.println("5. Exit");
+            System.out.print("Choose: ");
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter deposit amount: ");
+                    double depAmount = sc.nextDouble();
+
+                    teller.processDeposit(bank.getCustomer(0), depAmount); // Aldrich
+                    break;
+                    
+                case 2: 
+                    System.out.print("Enter withdrawal amount: ");
+                    double withAmount = sc.nextDouble();
+
+                    Customer withCustomer = bank.getCustomer(0); 
+                    teller.processWithdrawal(withCustomer, withAmount);
+                    break;
+
+                case 3:
+                    bank.listCustomers();
+                    break;
+
+                case 4:
+                    System.out.println("\nTotal Bank Capital: $" + bank.getTotalCapital());
+                    break;
+
+                case 5:
+                    running = false;
+                    System.out.println("\nThank you for banking with us!");
+                    break;
+
+                default:
+                    System.out.println("\nInvalid choice.");
+            }
+        }
+
+        sc.close();
+    }
+}
+
+// Abstract class Person
+abstract class Person {
+    protected String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract void displayInfo();
+}
+
+// Customer class
+class Customer extends Person {
+    private double savings;
+
+    public Customer(String name, double initialDeposit) {
+        super(name);
+        this.savings = initialDeposit;
+    }
+
+    public double getSavings() {
+        return savings;
+    }
+
+    public void deposit(double amount) {
+        savings += amount;
+    }
+
+    public boolean withdraw(double amount) {
+        if (amount <= savings) {
+            savings -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Customer: " + name + " | Balance: $" + savings);
+    }
+}
+
+// Teller class
+class Teller extends Person {
+    public Teller(String name) {
+        super(name);
+    }
+
+    public void processDeposit(Customer customer, double amount) {
+        customer.deposit(amount);
+        printReceipt(customer, "Deposit", amount);
+    }
+
+    public void processWithdrawal(Customer customer, double amount) {
+        if (customer.withdraw(amount)) {
+            printReceipt(customer, "Withdrawal", amount);
+        } else {
+            System.out.println("❌ Insufficient funds for withdrawal.");
+        }
+    }
+
+    private void printReceipt(Customer customer, String type, double amount) {
+        System.out.println("\n===== BANK RECEIPT =====");
+        System.out.println("Teller: " + this.name);
+        System.out.println("Customer: " + customer.getName());
+        System.out.println("Transaction: " + type);
+        System.out.println("Amount: $" + amount);
+        System.out.println("New Balance: $" + customer.getSavings());
+        System.out.println("========================\n");
+    }
+
+    @Override
+    public void displayInfo() {
+        System.out.println("Teller: " + name);
+    }
+}
+
+// Bank class
+class Bank {
+    private ArrayList<Customer> customers = new ArrayList<>();
+
+    public void addCustomer(Customer c) {
+        customers.add(c);
+    }
+
+    public double getTotalCapital() {
+        double total = 0;
+        for (Customer c : customers) {
+            total += c.getSavings();
+        }
+        return total;
+    }
+
+    public Customer getCustomer(int index) {
+        if (index >= 0 && index < customers.size()) {
+            return customers.get(index);
+        }
+        return null;
+    }
+
+    public void listCustomers() {
+        System.out.println("\n=== Customer List ===");
+        for (int i = 0; i < customers.size(); i++) {
+            customers.get(i).displayInfo(); // polymorphic call
+        }
+    }
+}

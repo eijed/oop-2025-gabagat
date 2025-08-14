@@ -50,6 +50,36 @@ public class bank {
     }
 }
 
+// Bank class
+class Bank {
+    private ArrayList<Customer> customers = new ArrayList<>();
+
+    public void addCustomer(Customer c) {
+        customers.add(c);
+    }
+
+    public double getTotalCapital() {
+        double total = 0;
+        for (Customer c : customers) {
+            total += c.getSavings();
+        }
+        return total;
+    }
+
+    public Customer getCustomer(int index) {
+        if (index >= 0 && index < customers.size()) {
+            return customers.get(index);
+        }
+        return null;
+    }
+
+    public void listCustomers() {
+        for (Customer c : customers) {
+            c.displayInfo();
+        }
+    }
+}
+
 // Abstract Person class
 abstract class Person {
     protected String name;
@@ -128,35 +158,5 @@ class Teller extends Person {
     @Override
     public void displayInfo() {
         System.out.println("Teller: " + name);
-    }
-}
-
-// Bank class
-class Bank {
-    private ArrayList<Customer> customers = new ArrayList<>();
-
-    public void addCustomer(Customer c) {
-        customers.add(c);
-    }
-
-    public double getTotalCapital() {
-        double total = 0;
-        for (Customer c : customers) {
-            total += c.getSavings();
-        }
-        return total;
-    }
-
-    public Customer getCustomer(int index) {
-        if (index >= 0 && index < customers.size()) {
-            return customers.get(index);
-        }
-        return null;
-    }
-
-    public void listCustomers() {
-        for (Customer c : customers) {
-            c.displayInfo();
-        }
     }
 }

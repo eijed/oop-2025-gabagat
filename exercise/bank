@@ -127,7 +127,7 @@ class Teller extends Person {
         if (customer.withdraw(amount)) {
             printReceipt(customer, "Withdrawal", amount);
         } else {
-            System.out.println("❌ Insufficient funds for withdrawal.");
+            System.out.println("\nInsufficient funds for withdrawal.");
         }
     }
 

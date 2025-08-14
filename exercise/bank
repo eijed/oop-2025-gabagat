@@ -1,72 +1,56 @@
-// bank
-// savings, deposit, withdrawal
-// teller (cashier)
-// receipt
-// customer
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Banking {
+public class bank {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Bank bank = new Bank();
         Teller teller = new Teller("Danna");
 
-        // Add customer
-        bank.addCustomer(new Customer("Aldrich", 1000));
+        // customer
+        Customer customer1 = new Customer("Aldrich", 1000);
+        bank.addCustomer(customer1);
 
         boolean running = true;
         while (running) {
             System.out.println("===== BANK MENU =====");
-            System.out.println("1. Deposit");
-            System.out.println("2. Withdraw");
-            System.out.println("3. View Customers");
-            System.out.println("4. View Total Bank Capital");
-            System.out.println("5. Exit");
-            System.out.print("Choose: ");
+            System.out.println("[1] Deposit");
+            System.out.println("[2] Withdraw");
+            System.out.println("[3] View Customer Info");
+            System.out.println("[4] View Total Bank Capital");
+            System.out.println("[5] Exit");
+            System.out.print("Enter choice: ");
             int choice = sc.nextInt();
 
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter deposit amount: ");
-                    double depAmount = sc.nextDouble();
+            if (choice == 1) {
+                System.out.print("Enter deposit amount: ");
+                double amount = sc.nextDouble();
+                teller.processDeposit(customer1, amount);
 
-                    teller.processDeposit(bank.getCustomer(0), depAmount); // Aldrich
-                    break;
-                    
-                case 2: 
-                    System.out.print("Enter withdrawal amount: ");
-                    double withAmount = sc.nextDouble();
+            } else if (choice == 2) {
+                System.out.print("Enter withdrawal amount: ");
+                double amount = sc.nextDouble();
+                teller.processWithdrawal(customer1, amount);
 
-                    Customer withCustomer = bank.getCustomer(0); 
-                    teller.processWithdrawal(withCustomer, withAmount);
-                    break;
+            } else if (choice == 3) {
+                customer1.displayInfo();
 
-                case 3:
-                    bank.listCustomers();
-                    break;
+            } else if (choice == 4) {
+                System.out.println("\nTotal Bank Capital: $" + bank.getTotalCapital());
 
-                case 4:
-                    System.out.println("\nTotal Bank Capital: $" + bank.getTotalCapital());
-                    break;
+            } else if (choice == 5) {
+                running = false;
+                System.out.println("\nThank you for banking with us!");
 
-                case 5:
-                    running = false;
-                    System.out.println("\nThank you for banking with us!");
-                    break;
-
-                default:
-                    System.out.println("\nInvalid choice.");
+            } else {
+                System.out.println("\nInvalid choice.");
             }
         }
-
-        sc.close();
     }
 }
 
-// Abstract class Person
+// Abstract Person class
 abstract class Person {
     protected String name;
 
@@ -127,7 +111,7 @@ class Teller extends Person {
         if (customer.withdraw(amount)) {
             printReceipt(customer, "Withdrawal", amount);
         } else {
-            System.out.println("\nInsufficient funds for withdrawal.");
+            System.out.println("\nInsufficient funds.");
         }
     }
 
@@ -171,9 +155,8 @@ class Bank {
     }
 
     public void listCustomers() {
-        System.out.println("\n=== Customer List ===");
-        for (int i = 0; i < customers.size(); i++) {
-            customers.get(i).displayInfo(); // polymorphic call
+        for (Customer c : customers) {
+            c.displayInfo();
         }
     }
 }

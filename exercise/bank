@@ -1,23 +1,29 @@
+// bank (check)
+// capital, deposit, withdrawal, savings (check)
+// teller (check)
+// customer (check)
+// receipt (check)
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class bank {
+public class BankApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         Bank bank = new Bank();
         Teller teller = new Teller("Danna");
 
-        // customer
-        Customer customer1 = new Customer("Aldrich", 1000);
-        bank.addCustomer(customer1);
+        // Create a customer savings account and add to bank
+        SavingsAccount account = new SavingsAccount("Aldrich", 1000, 2.5);
+        bank.addAccount(account);
 
         boolean running = true;
         while (running) {
             System.out.println("===== BANK MENU =====");
             System.out.println("[1] Deposit");
             System.out.println("[2] Withdraw");
-            System.out.println("[3] View Customer Info");
+            System.out.println("[3] View Account Info");
             System.out.println("[4] View Total Bank Capital");
             System.out.println("[5] Exit");
             System.out.print("Enter choice: ");
@@ -26,15 +32,15 @@ public class bank {
             if (choice == 1) {
                 System.out.print("Enter deposit amount: ");
                 double amount = sc.nextDouble();
-                teller.processDeposit(customer1, amount);
+                teller.processDeposit(account, amount);
 
             } else if (choice == 2) {
                 System.out.print("Enter withdrawal amount: ");
                 double amount = sc.nextDouble();
-                teller.processWithdrawal(customer1, amount);
+                teller.processWithdrawal(account, amount);
 
             } else if (choice == 3) {
-                customer1.displayInfo();
+                account.displayAccountInfo();
 
             } else if (choice == 4) {
                 System.out.println("\nTotal Bank Capital: $" + bank.getTotalCapital());
@@ -47,36 +53,25 @@ public class bank {
                 System.out.println("\nInvalid choice.");
             }
         }
+
+        sc.close();
     }
 }
 
 // Bank class
 class Bank {
-    private ArrayList<Customer> customers = new ArrayList<>();
+    private ArrayList<SavingsAccount> accounts = new ArrayList<>();
 
-    public void addCustomer(Customer c) {
-        customers.add(c);
+    public void addAccount(SavingsAccount c) {
+        accounts.add(c);
     }
 
     public double getTotalCapital() {
         double total = 0;
-        for (Customer c : customers) {
+        for (SavingsAccount c : accounts) {
             total += c.getSavings();
         }
         return total;
-    }
-
-    public Customer getCustomer(int index) {
-        if (index >= 0 && index < customers.size()) {
-            return customers.get(index);
-        }
-        return null;
-    }
-
-    public void listCustomers() {
-        for (Customer c : customers) {
-            c.displayInfo();
-        }
     }
 }
 
@@ -95,11 +90,11 @@ abstract class Person {
     public abstract void displayInfo();
 }
 
-// Customer class
-class Customer extends Person {
-    private double savings;
+// Account class
+class Account extends Person {
+    protected double savings;
 
-    public Customer(String name, double initialDeposit) {
+    public Account(String name, double initialDeposit) {
         super(name);
         this.savings = initialDeposit;
     }
@@ -122,7 +117,32 @@ class Customer extends Person {
 
     @Override
     public void displayInfo() {
-        System.out.println("Customer: " + name + " | Balance: $" + savings);
+        System.out.println("Account: " + name + " | Balance: $" + savings);
+    }
+}
+
+// SavingsAccount class
+class SavingsAccount extends Account {
+    private double interestRate;
+
+    public SavingsAccount(String name, double initialDeposit, double interestRate) {
+        super(name, initialDeposit);
+        this.interestRate = interestRate;
+    }
+
+    public void applyInterest() {
+        double interest = savings * interestRate / 100;
+        savings += interest;
+        System.out.println("💰 Interest Applied: $" + interest);
+    }
+
+    public void displayAccountInfo() {
+        System.out.println("\n===== ACCOUNT INFO =====");
+        System.out.println("Name: " + name);
+        System.out.println("Account Type: Savings");
+        System.out.println("Balance: $" + savings);
+        System.out.println("Interest Rate: " + interestRate + "%");
+        System.out.println("========================\n");
     }
 }
 
@@ -132,26 +152,26 @@ class Teller extends Person {
         super(name);
     }
 
-    public void processDeposit(Customer customer, double amount) {
-        customer.deposit(amount);
-        printReceipt(customer, "Deposit", amount);
+    public void processDeposit(SavingsAccount account, double amount) {
+        account.deposit(amount);
+        printReceipt(account, "Deposit", amount);
     }
 
-    public void processWithdrawal(Customer customer, double amount) {
-        if (customer.withdraw(amount)) {
-            printReceipt(customer, "Withdrawal", amount);
+    public void processWithdrawal(SavingsAccount account, double amount) {
+        if (account.withdraw(amount)) {
+            printReceipt(account, "Withdrawal", amount);
         } else {
-            System.out.println("\nInsufficient funds.");
+            System.out.println("\n❌ Insufficient funds.");
         }
     }
 
-    private void printReceipt(Customer customer, String type, double amount) {
+    private void printReceipt(SavingsAccount account, String type, double amount) {
         System.out.println("\n===== BANK RECEIPT =====");
         System.out.println("Teller: " + this.name);
-        System.out.println("Customer: " + customer.getName());
+        System.out.println("Customer: " + account.getName());
         System.out.println("Transaction: " + type);
         System.out.println("Amount: $" + amount);
-        System.out.println("New Balance: $" + customer.getSavings());
+        System.out.println("New Balance: $" + account.getSavings());
         System.out.println("========================\n");
     }
 

@@ -133,7 +133,7 @@ class SavingsAccount extends Account {
     public void applyInterest() {
         double interest = savings * interestRate / 100;
         savings += interest;
-        System.out.println("💰 Interest Applied: $" + interest);
+        System.out.println("\nInterest Applied: $" + interest);
     }
 
     public void displayAccountInfo() {
@@ -161,7 +161,7 @@ class Teller extends Person {
         if (account.withdraw(amount)) {
             printReceipt(account, "Withdrawal", amount);
         } else {
-            System.out.println("\n❌ Insufficient funds.");
+            System.out.println("\nInsufficient funds.");
         }
     }
 

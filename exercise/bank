@@ -178,3 +178,132 @@ class Teller extends Person {
         System.out.println("Teller: " + name);
     }
 }
+
+
+
+_______________
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        Address address = new Address(33, "J.P. Rizal St.", "Poblacion", "Pandi", "Bulacan", "Philippines", "3014");
+        System.out.println(address);
+
+        Account juan = new Account(2, "Juan", "Tamad", "Seryoso", address, LocalDate.parse("1995-10-22"), "09222222222", 50.50);
+        System.out.printf("Initial Balance: %.2f\n", juan.getBalance());
+
+        juan.deposit(100);
+        juan.withdraw(200);
+        juan.withdraw(10);
+
+        System.out.printf("Balance: %.2f\n", juan.getBalance());
+
+        double audit = 0.0;
+        for (Transaction t : juan.getTransactions()) {
+            if (t.getType() == TransactionType.CREDIT) {
+                audit += t.getAmount();
+            } else {
+                audit -= t.getAmount();
+            }
+        }
+
+        System.out.println("Audit total: " + audit);
+    }
+}
+
+enum TransactionType {
+    DEBIT,
+    CREDIT
+}
+
+class Address {
+    private int number;
+    private String street;
+    private String barangay;
+    private String municipality;
+    private String province;
+    private String country;
+    private String postalCode;
+
+    public Address(int number, String street, String barangay, String municipality, String province, String country, String postalCode) {
+        this.number = number;
+        this.street = street;
+        this.barangay = barangay;
+        this.municipality = municipality;
+        this.province = province;
+        this.country = country;
+        this.postalCode = postalCode;
+    }
+
+    @Override
+    public String toString() {
+        return number + " " + street + ", " + barangay + ", " + municipality + ", " + province + ", " + country + " " + postalCode;
+    }
+}
+
+class Transaction {
+    private TransactionType type;
+    private double amount;
+
+    public Transaction(TransactionType type, double amount) {
+        this.type = type;
+        this.amount = amount;
+    }
+
+    public TransactionType getType() {
+        return type;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+}
+
+class Account {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String middleName;
+    private Address address;
+    private LocalDate birthDate;
+    private String phoneNumber;
+    private double balance;
+    private List<Transaction> transactions;
+
+    public Account(int id, String firstName, String lastName, String middleName, Address address, LocalDate birthDate, String phoneNumber, double initialBalance) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.address = address;
+        this.birthDate = birthDate;
+        this.phoneNumber = phoneNumber;
+        this.balance = initialBalance;
+        this.transactions = new ArrayList<>();
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        transactions.add(new Transaction(TransactionType.CREDIT, amount));
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            transactions.add(new Transaction(TransactionType.DEBIT, amount));
+        } else {
+            System.out.println("Insufficient funds for withdrawal.");
+        }
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+}

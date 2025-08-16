@@ -327,7 +327,6 @@ public class Main {
         juan.withdraw(10);
 
         System.out.printf("Balance: %.2f\n", juan.getBalance());
-
     }
 }
 
@@ -383,30 +382,33 @@ abstract class Person {
     private String firstName;
     private String lastName;
     private String middleName;
-    private String address;
+    private Address address;
     private LocalDate birthDate;
     private String phoneNumber;
 
-    public Account(String firstName, String lastName, String middleName, String address, LocalDate birthDate, String phoneNumber) {
+    public Person(String firstName, String lastName, String middleName, Address address, LocalDate birthDate, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
         this.address = address;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
+    }
 }
 
-class Account {
+class Account extends Person {
     private int id;
     private double balance;
     private List<Transaction> transactions;
-    
-        public Account(int id, double initialBalance) {
+
+    public Account(int id, String firstName, String lastName, String middleName, Address address, LocalDate birthDate, String phoneNumber, double initialBalance) {
+        super(firstName, lastName, middleName, address, birthDate, phoneNumber);
+        this.id = id;
         this.balance = initialBalance;
-        this.transactions = new ArrayList<>();  
+        this.transactions = new ArrayList<>();
     }
-        
-        public double getBalance() {
+
+    public double getBalance() {
         return balance;
     }
 
